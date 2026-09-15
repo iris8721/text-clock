@@ -7,7 +7,7 @@ function updateClock() {
     
     const now = new Date();
     let hours = now.getHours() % 12 || 12;
-    let minutes = now.getMinutes();
+    const minutes = now.getMinutes();
     
     document.querySelector('.it').classList.add('active');
     document.querySelector('.is').classList.add('active');
@@ -21,7 +21,10 @@ function updateClock() {
     }
     
     const activate = (...selectors) => {
-        selectors.forEach(sel => document.querySelector(sel).classList.add('active'));
+        selectors.forEach(sel => {
+            const el = document.querySelector(sel);
+            if (el) el.classList.add('active');
+        });
     };
     
     const minuteMap = {
