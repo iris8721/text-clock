@@ -5,12 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Text Clock</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%23000'/%3E%3Ccircle cx='8' cy='8' r='5' fill='none' stroke='%23ff3333' stroke-width='1.5'/%3E%3Cpath d='M8 5v3l2 2' stroke='%23ff3333' stroke-width='1.5' fill='none'/%3E%3C/svg%3E">
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <div class="clock-container">
-        <div class="text-content">
+    <div class="clock-container" role="img" aria-label="">
+        <div class="text-content" aria-hidden="true">
             <p><span class="it">it</span> <span class="is">is</span> <span class="half">half</span> <span class="ten">ten</span></p>
             <p><span class="quarter">quarter</span> <span class="twenty">twenty</span></p>
             <p><span class="five">five</span> <span class="minutes">minutes</span> <span class="to">to</span></p>
@@ -20,7 +21,7 @@
             <p><span class="nine">nine</span> <span class="ten-hour">ten</span> <span class="eleven">eleven</span></p>
             <p><span class="twelve">twelve</span> <span class="oclock">o'clock</span></p>
         </div>
-        <div class="minute-dots">
+        <div class="minute-dots" aria-hidden="true">
             <span class="dot"></span>
             <span class="dot"></span>
             <span class="dot"></span>

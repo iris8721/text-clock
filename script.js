@@ -57,6 +57,9 @@ function updateClock() {
     };
     
     activate(hourMap[hours]);
+    
+    const phrase = Array.from(document.querySelectorAll('.text-content span.active'), el => el.textContent).join(' ');
+    document.querySelector('.clock-container').setAttribute('aria-label', remainder ? `${phrase}, plus ${remainder} minute${remainder === 1 ? '' : 's'}` : phrase);
 }
 
 function randomFlicker() {
@@ -114,6 +117,8 @@ function slowToFastFlicker(word) {
         word.style.textShadow = '0 0 5px rgba(139, 0, 0, 0.5)';
         
         setTimeout(() => {
+            if (!word.classList.contains('active')) return;
+            
             word.style.color = '#ff3333';
             word.style.textShadow = '0 0 10px rgba(255, 51, 51, 0.8), 0 0 20px rgba(255, 51, 51, 0.6), 0 0 30px rgba(255, 51, 51, 0.4)';
             
