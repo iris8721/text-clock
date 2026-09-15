@@ -73,11 +73,14 @@ function randomFlicker() {
 
 function quickFlicker(word, count, maxCount) {
     if (count >= maxCount) return;
+    if (!word.classList.contains('active')) return;
     
     word.style.color = '#8b0000';
     word.style.textShadow = '0 0 5px rgba(139, 0, 0, 0.5)';
     
     setTimeout(() => {
+        if (!word.classList.contains('active')) return;
+        
         word.style.color = '#ff3333';
         word.style.textShadow = '0 0 10px rgba(255, 51, 51, 0.8), 0 0 20px rgba(255, 51, 51, 0.6), 0 0 30px rgba(255, 51, 51, 0.4)';
         
@@ -100,6 +103,7 @@ function slowToFastFlicker(word) {
     
     function flicker() {
         if (currentStep >= timings.length) return;
+        if (!word.classList.contains('active')) return;
         
         const timing = timings[currentStep];
         

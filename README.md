@@ -35,5 +35,3 @@ python3 -m http.server
 - Minutes are truncated, not rounded: the phrase can read up to ~5 minutes
   behind the real time (the dots carry the remainder).
 - 12-hour clock only; no AM/PM indicator.
-- Flicker animations mutate inline styles, so a word mid-flicker when the
-  minute rolls over keeps its inline color until the next flicker.
